@@ -39,10 +39,6 @@ There's also [links](https://www.freecodecamp.com), and
 function App() {
   const [markdownText, setMarkdownText] = useState<string>(defaultMarkdown);
 
-  const renderers = {
-    text: ({ value }) => value.split('\n').map((text, i) => <span key={i}>{text}<br/></span>)
-  };
-
   return (
     <>
       <div>
@@ -55,7 +51,7 @@ function App() {
             onChange={(e) => setMarkdownText(e.target.value)}
           ></textarea>
           <div id="preview">
-            <ReactMarkdown renderers={renderers}>{markdownText}</ReactMarkdown>
+            <ReactMarkdown>{markdownText}</ReactMarkdown>
           </div>
         </div>
       </div>
